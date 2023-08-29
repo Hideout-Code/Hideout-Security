@@ -1,7 +1,7 @@
 import * as fs from 'fs';
 import winston from 'winston';
 import 'winston-daily-rotate-file';
-import { CustomClient } from '../bot';
+import { CustomClient } from '..';
 import { AttachmentBuilder, ChatInputCommandInteraction, ContextMenuCommandInteraction, EmbedBuilder, Interaction, TextChannel } from 'discord.js';
 
 const config = {
