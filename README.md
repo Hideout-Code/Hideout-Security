@@ -11,7 +11,6 @@
 ```sh
 npm install
 ```
-test
 
 ## Usage
 
