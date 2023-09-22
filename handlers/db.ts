@@ -99,3 +99,26 @@ export const tempRoleDB = sequelize.define<tempRoleModel>("tempRoles", {
     whenToRemove: {type: DataTypes.BIGINT, defaultValue: 0},
 });
 tempRoleDB.sync();
+
+export interface blacklistModel extends Model<InferAttributes<blacklistModel>, InferCreationAttributes<blacklistModel>> {
+    userID: string;
+    reason: string;
+  }
+
+  export const blacklistDB: any = sequelize.define<blacklistModel>('blacklist', {
+    userID: {
+      type: DataTypes.STRING,
+      primaryKey: true,
+      unique: true,
+    },
+    reason: DataTypes.STRING,
+  });
+  blacklistDB.sync();
+
+  export async function blacklistCheck(user: string): Promise<boolean> {
+    if ((await blacklistDB.count({ where: { userID: user } })) > 0) {
+      return true;
+    } else {
+      return false;
+    }
+  }
