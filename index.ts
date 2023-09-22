@@ -7,6 +7,7 @@ export interface CustomClient extends Client {
     commands: Collection<string, any>;
     slashCommands: Collection<string, any>;
 	buttonCommands: Collection<string, any>;
+	contextCommands: Map<string, any>;
     cooldowns: Collection<string, any>;
 };
 
@@ -25,6 +26,7 @@ const client: any = new Client({ intents: [
 client.commands = new Collection();
 client.slashCommands = new Collection();
 client.buttonCommands = new Collection();
+client.contextCommands = new Collection();
 client.cooldowns = new Collection();
 
 // Event Handler
@@ -64,6 +66,19 @@ for (const folder of commandFolders) {
 	}
 }
 
+//Context-Menu Handler
+
+const contextMenus = fs.readdirSync('./interactions/context-menus');
+
+for (const folder of contextMenus) {
+  const files = fs.readdirSync(`./interactions/context-menus/${folder}`).filter((file) => file.endsWith('.ts'));
+  for (const file of files) {
+    const menu = require(`./interactions/context-menus/${folder}/${file}`);
+    const keyName = `${folder.toUpperCase()} ${menu.data.name}`;
+    client.contextCommands.set(keyName, menu);
+  }
+}
+
 // Slash Command Handler
 
 const slashCommands = fs.readdirSync("./interactions/slash");
@@ -100,6 +115,7 @@ const rest = new REST({ version: "9" }).setToken(process.env.TOKEN!);
 
 const commandJsonData = [
     ...Array.from(client.slashCommands.values()).map((c: any) => c.data.toJSON()),
+	...Array.from(client.contextCommands.values()).map((c: any) => c.data),
 ];
 
 (async () => {
