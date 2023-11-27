@@ -42,7 +42,7 @@ const fileRotateTransportCombined = new winston.transports.DailyRotateFile({
 
 const fileRotateTransportWarn = new winston.transports.DailyRotateFile({
   level: 'warn',
-  filename: './logs/warn-%DATE%.log',
+  filename: './crash-logs/warn-%DATE%.log',
   datePattern: 'MM-DD-YYYY',
   maxFiles: '14d',
 });
