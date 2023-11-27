@@ -5,7 +5,6 @@ module.exports = {
 
     async execute(interaction: ButtonInteraction) {
     await interaction.reply({ content: "Crashing Please Wait..."})
-    process.env.LOGLEVEL
     process.exit(0)
     }
 }
