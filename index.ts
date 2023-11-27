@@ -109,6 +109,9 @@ for (const module of buttonCommands) {
     }
 }
 
+// Log in to Discord with your client's token
+client.login(process.env.TOKEN);
+
 // Command Registration
 
 const rest = new REST({ version: "9" }).setToken(process.env.TOKEN!);
@@ -132,6 +135,3 @@ const commandJsonData = [
         throw(error);
     }
 })();
-
-// Log in to Discord with your client's token
-client.login(process.env.TOKEN);
