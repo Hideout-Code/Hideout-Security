@@ -5,6 +5,6 @@ module.exports = {
 
     async execute(interaction: ButtonInteraction) {
     await interaction.reply({ content: "Crashing Please Wait..."})
-    process.exit(1)
+    process.exit(0)
     }
 }
