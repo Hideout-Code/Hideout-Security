@@ -1,5 +1,5 @@
 import { EmbedBuilder, GuildMember, TextChannel } from "discord.js";
-import { inviteDB, userDB } from '../handlers/db.ts';
+import { inviteDB, userDB } from '@handlers/db.ts';
 import { CustomClient } from "../";
 
 module.exports = {

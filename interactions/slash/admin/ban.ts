@@ -1,5 +1,5 @@
 import { ChatInputCommandInteraction, EmbedBuilder, SlashCommandBuilder, User } from "discord.js";
-import { banDB } from "../../../handlers/db";
+import { banDB } from "@handlers/db";
 
 module.exports = {
 	data: new SlashCommandBuilder()

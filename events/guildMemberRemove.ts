@@ -1,5 +1,5 @@
 import { EmbedBuilder, GuildMember, TextChannel } from "discord.js";
-import log from '../handlers/logger.ts';
+import log from '@handlers/logger.ts';
 import { CustomClient } from "..";
 
 module.exports = {

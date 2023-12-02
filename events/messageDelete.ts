@@ -1,6 +1,6 @@
 import { EmbedBuilder, Message, TextChannel } from "discord.js";
-import log from '../handlers/logger.ts';
-import { MessageDB } from '../handlers/db.ts';
+import log from '@handlers/logger.ts';
+import { MessageDB } from '@handlers/db.ts';
 import { CustomClient } from "..";
 
 module.exports = {

@@ -1,6 +1,6 @@
 import { Collection, ChannelType, Message, Guild } from "discord.js";
-import { log, errLog } from '../handlers/logger.ts';
-import { MessageDB, userDB } from '../handlers/db.ts';
+import { log, errLog } from '@handlers/logger.ts';
+import { MessageDB, userDB } from '@handlers/db.ts';
 import { CustomClient } from "..";
 
 // Prefix regex, we will use to match in mention prefix.

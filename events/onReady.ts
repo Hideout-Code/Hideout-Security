@@ -1,7 +1,7 @@
 import { EmbedBuilder, Guild, TextChannel } from "discord.js";
 import { CustomClient } from "..";
-import { inviteDB, tempRoleDB } from "../handlers/db";
-import { log, errLog } from "../handlers/logger";
+import { inviteDB, tempRoleDB } from "@handlers/db";
+import { log, errLog } from "@handlers/logger";
 
 async function remRole(client: CustomClient, target: string, role: string) {
     var guild = await client.guilds.cache.get(process.env.TEST_GUILD_ID!);

@@ -1,6 +1,6 @@
 import { Guild, GuildAuditLogsEntry, AuditLogEvent, EmbedBuilder, User, TextChannel } from "discord.js";
-import { banDB, inviteDB } from "../handlers/db";
-import { log } from "../handlers/logger";
+import { banDB, inviteDB } from "@handlers/db";
+import { log } from "@handlers/logger";
 
 module.exports = {
 	name: "guildAuditLogEntryCreate",

@@ -1,7 +1,7 @@
-import { log, errLog, intLog } from '../handlers/logger.ts';
+import { log, errLog, intLog } from '@handlers/logger.ts';
 import { Interaction } from 'discord.js';
 import { CustomClient } from '../index.ts';
-import { blacklistCheck } from '../handlers/db.ts';
+import { blacklistCheck } from '@handlers/db.ts';
 
 module.exports = {
   name: 'interactionCreate',

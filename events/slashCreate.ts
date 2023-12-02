@@ -1,6 +1,6 @@
 import { Interaction } from "discord.js";
 import { CustomClient } from "..";
-import { errLog, intLog } from '../handlers/logger.ts';
+import { errLog, intLog } from '@handlers/logger.ts';
 
 module.exports = {
 	name: "interactionCreate",
