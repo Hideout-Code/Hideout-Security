@@ -7,7 +7,7 @@ module.exports = {
         .setDescription('Restart the Bot'),
 
         async execute(interaction: ChatInputCommandInteraction) {
-            await interaction.deferReply({ ephemeral: true });
+            await interaction.reply({content: 'Restarting...',ephemeral: true });
             await panelAPI('power', '9ac186c3', 'restart');
         }
 };
