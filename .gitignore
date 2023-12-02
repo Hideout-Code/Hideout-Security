@@ -4,6 +4,7 @@ database.sqlite
 .prettierrc
 
 # Logs
+crash-logs
 logs
 *.log
 npm-debug.log*
